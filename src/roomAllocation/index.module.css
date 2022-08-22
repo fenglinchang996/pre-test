@@ -1,0 +1,50 @@
+.container {
+  max-width: 768px;
+  margin: auto;
+}
+
+.guest-room-number {
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+.unallocated-guest-number {
+  border: 1px solid blue;
+  background-color: skyblue;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.room-list {
+  padding: 0;
+  margin: 20px 0;
+}
+
+.room-list > * + * {
+  border-top: 1px solid gray;
+}
+
+.room {
+  list-style: none;
+}
+
+.room-total-guest {
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+.guest-number-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 20px 0;
+}
+
+.guest-number-input__info {
+  font-size: 14px;
+}
+
+.guest-number-input__info--detail {
+  font-size: 14px;
+  color: gray;
+}
