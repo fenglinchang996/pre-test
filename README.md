@@ -8,6 +8,8 @@
   npm install
   ```
   
+  > node version: 16.16.0
+  
 - 啟動：
 
   ```
