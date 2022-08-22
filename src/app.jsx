@@ -1,44 +1,36 @@
 import { useState } from 'react';
 import CustomInputNumber from './customInputNumber';
-
-const parseNumber = (newVal, max, min) => {
-  if (newVal === '') {
-    return min ? min : '';
-  } else {
-    const num = parseInt(newVal);
-    if (Number.isNaN(num)) {
-      return min ? min : newVal;
-    } else {
-      if (num >= max) {
-        return max;
-      } else if (num <= min) {
-        return min;
-      } else {
-        return num;
-      }
-    }
-  }
-};
+import RoomAllocation from './roomAllocation';
 
 const App = () => {
-  const [value, setValue] = useState(1);
-  const max = 16;
-  const min = 1;
-  const step = 2;
+  return (
+    <div>
+      <RoomAllocation
+        guest={10}
+        room={5}
+        onChange={(result) => console.log(result)}
+      />
+      {/* <CustomInputNumberTest /> */}
+    </div>
+  );
+};
 
-  console.log(value);
+const CustomInputNumberTest = () => {
+  const [value, setValue] = useState(0);
 
   return (
     <CustomInputNumber
-      min={min}
-      max={max}
-      step={step}
+      min={0}
+      max={16}
+      step={2}
       name="input-number"
       value={value}
-      disabled
-      onChange={(e) => setValue(parseNumber(e.target.value))}
+      disabled={false}
+      onChange={(e) => {
+        console.log(e.target.value);
+      }}
       onBlur={(e) => {
-        setValue(parseNumber(e.target.value, max, min));
+        console.log(e.target.value);
       }}
     />
   );
